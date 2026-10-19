@@ -1,0 +1,13 @@
+{
+  "name": "@bsvkey/keyauth",
+  "version": "0.1.0",
+  "description": "Sign in with .key: verify a BSVKey name owner's signature. Zero dependencies.",
+  "type": "module",
+  "main": "src/keyauth.mjs",
+  "exports": "./src/keyauth.mjs",
+  "files": ["src"],
+  "engines": { "node": ">=18.17" },
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "license": "MIT",
+  "private": true
+}
