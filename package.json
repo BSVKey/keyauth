@@ -27,5 +27,10 @@
     "bsvkey"
   ],
   "author": "Embryo Space Inc. <support@embryospace.com>",
-  "homepage": "https://bsvkey.com/signin"
+  "homepage": "https://bsvkey.com/signin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BSVKey/keyauth.git"
+  },
+  "bugs": "https://github.com/BSVKey/keyauth/issues"
 }
