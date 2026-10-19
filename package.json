@@ -5,9 +5,27 @@
   "type": "module",
   "main": "src/keyauth.mjs",
   "exports": "./src/keyauth.mjs",
-  "files": ["src"],
-  "engines": { "node": ">=18.17" },
-  "scripts": { "test": "node --test test/*.test.mjs" },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
   "license": "MIT",
-  "private": true
+  "keywords": [
+    "bsv",
+    "bitcoin-sv",
+    "signin",
+    "auth",
+    "bsm",
+    "keyauth",
+    "bsvkey"
+  ],
+  "author": "Embryo Space Inc. <support@embryospace.com>",
+  "homepage": "https://bsvkey.com/signin"
 }
