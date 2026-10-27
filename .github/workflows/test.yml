@@ -15,4 +15,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+      # The tests cross-check against the @bsv/sdk bundle bsvkey.com serves.
+      - run: curl -fsSL https://bsvkey.com/vendor.js -o "$RUNNER_TEMP/vendor.js"
       - run: npm test
+        env:
+          BSVKEY_VENDOR: ${{ runner.temp }}/vendor.js
