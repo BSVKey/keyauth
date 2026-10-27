@@ -5,11 +5,15 @@ import crypto from 'node:crypto';
 import { createRequire } from 'node:module';
 import * as KA from '../src/keyauth.mjs';
 
-// The SDK bundle bsvkey.com serves (vendor.js). BSVKEY_VENDOR overrides the path.
+// The SDK bundle bsvkey.com serves. Download https://bsvkey.com/vendor.js and set
+// BSVKEY_VENDOR to its path before running the tests.
+if (!process.env.BSVKEY_VENDOR) {
+  throw new Error('set BSVKEY_VENDOR to a local copy of https://bsvkey.com/vendor.js');
+}
 const require = createRequire(import.meta.url);
 globalThis.window = globalThis; globalThis.self = globalThis;
 if (!globalThis.crypto) globalThis.crypto = crypto.webcrypto;   // Node 18: the SDK's key generator needs a global crypto
-require(process.env.BSVKEY_VENDOR || '../vendor.js');
+require(process.env.BSVKEY_VENDOR);
 const { PrivateKey, BSM, Utils } = globalThis.bsvsdk;
 
 const AUD = 'https://paywall.bsvkey.com';
